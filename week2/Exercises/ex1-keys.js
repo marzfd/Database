@@ -12,40 +12,44 @@ connection.connect(err => {
     console.log('Connected !');
 });
 
+// Drop Database
+connection.query('DROP DATABASE IF EXISTS mysql_week2', (err, results) => {
+  if (err) throw err;
+  console.log('Database dropped !');
+});
+
 // Create database
 connection.query('CREATE DATABASE mysql_week2', err => {
   if (err) throw err;
-  console.log('Database created !');
+  console.log('Database "mysql_week2" created !');
 });
 
 // Use database
-connection.query('USE MySQL_week2', err => {
+connection.query('USE mysql_week2', err => {
   if (err) throw err;
-  console.log('Using database !');
+  console.log('Using "mysql_week2" !');
 });
 
 // Create table
 connection.query(`CREATE TABLE authors (
-  author_no INT PRIMARY KEY,
+  author_no INT,
   author_name VARCHAR(255),
   university VARCHAR(255),
   date_of_birth DATE,
   h_index INT,
-  gender ENUM('M', 'F')
+  gender ENUM('M', 'F'),
+  CONSTRAINT PK_authors PRIMARY KEY (author_no)
   )`,
   err => {
     if (err) throw err;
-    console.log('Table created !');
+    console.log('Table "authors" created !');
 });
 
 // Add Column
-connection.query(`AlTER TABLE authors ADD COLUMN mentor VARCHAR(255) REFERENCES authors(author_no)`, err => {
+connection.query(`
+AlTER TABLE authors
+ADD COLUMN mentor VARCHAR(255) REFERENCES authors(author_no)`,
+err => {
   if (err) throw err;
-  console.log('Column Added !')
+  console.log('Column "mentor" added !')
 });
-
-// ! ?? Foreign Key ??
-// connection.query(`ALTER TABLE authors ADD FOREIGN KEY (mentor)`, err => {
-//   if (err) throw err;
-//   console.log('Foreign Key Added !')
-// });
