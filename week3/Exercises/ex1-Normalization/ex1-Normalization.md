@@ -1,25 +1,25 @@
-**Exercise 1 : Normalization**
+## Exercise 1 : Normalization
 
 The manager of the dinner club would like to manage the information system that assists him to keep track of the dinners had by members.
 Because the manager is not an expert of Information Systems, (s)he uses the following table to store the information.
 Please help the manger by using the knowledge of database normal forms.
 Save all answers in a text file / MD file.
 
-1. What columns violate 1NF?
+**1. What columns violate 1NF?**
 
 - member_address --> Should be the primary key, however, contains duplicate values !
 - dinner_date --> contains different data types !
 - food_code --> does not contain atomic/single values !
 - food_description --> does not contain atomic/single values !
 
-2. What entities do you recognize that could be extracted?
+**2. What entities do you recognize that could be extracted?**
 
 - members
 - dinner
 - venue
 - food
 
-3. Name all the tables and columns that would make a 3NF compliant solution.
+**3. Name all the tables and columns that would make a 3NF compliant solution.**
 
 - members (member_id as PK, member_name, and member_address)
 - dinner (dinner_id as PK and dinner_date)
@@ -27,6 +27,8 @@ Save all answers in a text file / MD file.
 - food (food_code as PK and food_description)
 - member_venue (member_id as FK, venue code as FK and dinner_id as FK)
 - dinner_food (dinner_id as FK and food_code as FK)
+
+</br>
 
 ```
 +-----------+---------------+----------------+-----------+-------------+------------+-------------------+-----------+------------------+
