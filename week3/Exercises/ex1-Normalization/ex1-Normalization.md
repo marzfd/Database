@@ -1,9 +1,9 @@
 ## Exercise 1 : Normalization
 
-The manager of the dinner club would like to manage the information system that assists him to keep track of the dinners had by members.
+*The manager of the dinner club would like to manage the information system that assists him to keep track of the dinners had by members.
 Because the manager is not an expert of Information Systems, (s)he uses the following table to store the information.
 Please help the manger by using the knowledge of database normal forms.
-Save all answers in a text file / MD file.
+Save all answers in a text file / MD file.*
 
 **1. What columns violate 1NF?**
 
